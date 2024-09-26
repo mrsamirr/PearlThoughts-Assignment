@@ -43,7 +43,7 @@ export function RecurrenceOptions() {
   return (
     <div className="space-y-4">
       <div>
-        <label className="block text-sm font-medium text-gray-700">Recurrence Type</label>
+        <label className="block text-sm font-medium m-4 text-gray-700">Recurrence Type</label>
         <Select onValueChange={handleRecurrenceTypeChange} value={recurrenceType}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Select recurrence type" />

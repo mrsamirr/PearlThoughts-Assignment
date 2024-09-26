@@ -1,36 +1,16 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+**PearlThoughts Assignment**
+This is a Next.js Project with React
 
-## Getting Started
+A reusable date picker component that allows users to select recurring dates with various options. Here's a breakdown of the components and their responsibilities:
 
-First, run the development server:
+1. `store.ts`: Manages the state using Zustand, including the start date, end date, recurrence type, interval, selected days, and preview dates.
+2. `RecurringDatePicker.tsx`: The main component that combines all other components.
+3. `DatePicker.tsx`: Allows users to select the start and end dates using the Calendar component.
+4. `RecurrenceOptions.tsx`: Provides options for selecting the recurrence type, interval, and specific options for weekly and monthly recurrences.
+5. `Preview.tsx`: Displays a preview of the selected recurring dates on a calendar.
+6. `page.tsx`: A Next.js page component that renders the RecurringDatePicker.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This implementation meets all the technical requirements and functionality specified in the task. Users can select different recurring patterns (daily, weekly, monthly, yearly), customize the recurrence with intervals and specific days, and see a visual preview of the selected dates.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The component is broken down into smaller, reusable parts, making it easier to maintain and extend in the future. The use of Zustand for state management provides a clean and efficient way to handle the complex state of the date picker.
