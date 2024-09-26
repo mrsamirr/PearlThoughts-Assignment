@@ -57,7 +57,7 @@ export default function Home() {
             <Calendar
               mode="range"
               selected={dateRange}
-              onSelect={setDateRange as any}
+              onSelect={(range) => setDateRange({ from: range?.from, to: range?.to })}
               className="rounded-md border"
               numberOfMonths={2}
             />
