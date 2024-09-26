@@ -6,12 +6,12 @@ import { useDatePickerStore } from '@/state/store'
 export function DatePicker() {
   const { startDate, endDate, setStartDate, setEndDate, generatePreviewDates } = useDatePickerStore()
 
-  const handleSelect = (value: Date | undefined) => {
-    if (!value) return
-    if (!endDate || value < startDate) {
-      setStartDate(value)
+  const handleSelect = (range: { from: Date | undefined; to?: Date | undefined } | undefined) => {
+    if (!range || !range.from) return
+    if (!range.to || range.from < startDate) {
+      setStartDate(range.from)
     } else {
-      setEndDate(value)
+      setEndDate(range.to)
     }
     generatePreviewDates()
   }
@@ -22,7 +22,7 @@ export function DatePicker() {
       <Calendar
         mode="range"
         selected={{ from: startDate, to: endDate || undefined }}
-        onSelect={handleSelect as any}
+        onSelect={handleSelect} 
         className="rounded-md border"
       />
     </div>
