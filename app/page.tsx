@@ -41,7 +41,6 @@ export default function Home() {
               selected={date}
               onSelect={setDate}
               className="rounded-md border"
-              numberOfMonths={2}
             />
             <div className="mt-4 text-medium font-sans">
               <p>Selected date: {date?.toDateString()}</p>
