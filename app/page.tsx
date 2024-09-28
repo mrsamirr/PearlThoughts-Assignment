@@ -41,6 +41,7 @@ export default function Home() {
               selected={date}
               onSelect={setDate}
               className="rounded-md border"
+              numberOfMonths={2}
             />
             <div className="mt-4 text-medium font-sans">
               <p>Selected date: {date?.toDateString()}</p>
@@ -70,36 +71,9 @@ export default function Home() {
             </div>
           </CardContent>
         </Card>
-        <Card className="mt-8">
-          <CardHeader>
-            <CardTitle>Calendar with Custom Styling</CardTitle>
-            <CardDescription>A calendar with custom styling and disabled dates</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Calendar
-              mode="single"
-              selected={date}
-              onSelect={setDate}
-              className="rounded-md border"
-              modifiers={{
-                disabled: [
-                  { before: new Date() },
-                  { after: new Date(new Date().setMonth(new Date().getMonth() + 3)) },
-                ],
-                highlight: [new Date(new Date().setDate(new Date().getDate() + 7))],
-              }}
-              modifiersStyles={{
-                disabled: { color: "gray" },
-                highlight: { backgroundColor: "lightblue" },
-              }}
-              footer={
-                <div className="mt-4 flex justify-center">
-                  <Button onClick={() => setDate(new Date())}>Today</Button>
-                </div>
-              }
-            />
-          </CardContent>
-        </Card>
+      </div>
+      <div className="mt-4 flex justify-center">
+        <Button onClick={() => setDate(new Date())}>Today</Button>
       </div>
     </div>
   );
