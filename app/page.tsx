@@ -64,6 +64,9 @@ export default function Home() {
             <div className="mt-4">
               <p>Start date: {dateRange.from?.toDateString()}</p>
               <p>End date: {dateRange.to?.toDateString()}</p>
+              {dateRange.from && dateRange.to && (
+                <p>Difference of days: {Math.ceil((dateRange.to.getTime() - dateRange.from.getTime()) / (1000 * 60 * 60 * 24))}</p>
+              )}
             </div>
           </CardContent>
         </Card>
